@@ -46,6 +46,12 @@
     path: '/',
     redirect: '/welcome',
   },
+  // 配置子应用sub-app关联的路由
+  {
+    name: 'sub-app',
+    path: '/sub-app',
+    microApp: 'sub-app',
+  },
   {
     component: './404',
   },

@@ -73,4 +73,14 @@ export default defineConfig({
   mfsu: {},
   webpack5: {},
   exportStatic: {},
+  qiankun: {
+    master: {
+      apps: [
+        {
+          name: 'sub-app',
+          entry: '//localhost:8001',
+        }
+      ]
+    }
+  }
 });
