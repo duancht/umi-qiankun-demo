@@ -93,7 +93,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
               enableDarkTheme
               settings={initialState?.settings}
               onSettingChange={(settings) => {
-                setInitialState((preInitialState) => ({
+                setInitialState((preInitialState: any) => ({
                   ...preInitialState,
                   settings,
                 }));
@@ -105,4 +105,20 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     },
     ...initialState?.settings,
   };
+};
+
+// 配置运行时生命周期钩子（可选）
+export const qiankun = {
+  // 应用加载之前
+  async bootstrap(props: any) {
+    console.log('app1 bootstrap', props);
+  },
+  // 应用 render 之前触发
+  async mount(props: any) {
+    console.log('app1 mount', props);
+  },
+  // 应用卸载之后触发
+  async unmount(props: any) {
+    console.log('app1 unmount', props);
+  },
 };
