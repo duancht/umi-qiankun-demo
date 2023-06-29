@@ -49,7 +49,7 @@ export default defineConfig({
   esbuild: {},
   title: false,
   ignoreMomentLocale: true,
-  proxy: proxy[REACT_APP_ENV || 'dev'],
+  proxy,
   manifest: {
     basePath: '/',
   },
@@ -78,7 +78,7 @@ export default defineConfig({
       apps: [
         {
           name: 'sub-app',
-          entry: '//localhost:8001',
+          entry: '//localhost:8101',
         }
       ]
     }

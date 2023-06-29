@@ -48,9 +48,22 @@
   },
   // 配置子应用sub-app关联的路由
   {
-    name: 'sub-app',
-    path: '/sub-app',
+    name: 'form.advanced-form',
+    path: '/sub-app/form/advanced-form',
     microApp: 'sub-app',
+    microAppProps: {
+      base: '',     // 路由传空可以直接跳转到对应路由，不会重定向到sub-app首页
+      showMenu: false,  // 子应用不需要渲染菜单
+    }
+  },
+  {
+    name: 'sub-app',
+    path: '/sub-app/*',
+    microApp: 'sub-app',
+    microAppProps: {
+      base: '',
+      showMenu: true,
+    }
   },
   {
     component: './404',
