@@ -54,6 +54,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
   if (!showMenu){
     qiankunProps.headerRender = false;
     qiankunProps.menuRender = false;
+    qiankunProps.breadcrumbRender = false;
   }
 
   return {
@@ -63,13 +64,13 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       content: initialState?.currentUser?.name,
     },
     footerRender: false,
-    onPageChange: () => {
-      const { location } = history;
-      // 如果没有登录，重定向到 login
-      if (!initialState?.currentUser && location.pathname !== loginPath) {
-        history.push(loginPath);
-      }
-    },
+    // onPageChange: () => {
+    //   const { location } = history;
+    //   // 如果没有登录，重定向到 login
+    //   if (!initialState?.currentUser && location.pathname !== loginPath) {
+    //     history.push(loginPath);
+    //   }
+    // },
     menuHeaderRender: undefined,
     // 自定义 403 页面
     // unAccessible: <div>unAccessible</div>,

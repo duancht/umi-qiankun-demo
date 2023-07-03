@@ -15,4 +15,8 @@ export default  {
       // 依赖 origin 的功能可能需要这个，比如 cookie
       changeOrigin: true,
     },
+    '/sub-app/api/': {
+      target: 'http://localhost:8101',
+      changeOrigin: true,
+    },
 };
